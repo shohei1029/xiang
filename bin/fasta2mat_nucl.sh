@@ -38,10 +38,10 @@ mkdir -p ${OUTDIR}
 echo "making BLAST Database.."
 makeblastdb -in ${FASTA_FILE} -out ${OUTDIR}/${NAME_CORE} -dbtype nucl -hash_index -parse_seqids -max_file_sz 2GB
 
-BLAST_OUT_FILE_NAME=blastn_bestHSP_1e-5_${NAME_CORE}.txt
+BLAST_OUT_FILE_NAME=blastn_bestHSP_${EVALUE}_${NAME_CORE}.txt
 
 echo "BLAST.."
-blastn -query ${FASTA_FILE} -db ${OUTDIR}/${NAME_CORE} -max_hsps 1 -num_threads 16 -outfmt 6 -evalue ${EVALUE} -max_target_seqs 99999999 -out ${OUTDIR}/${BLAST_OUT_FILE_NAME}
+blastn -query ${FASTA_FILE} -db ${OUTDIR}/${NAME_CORE} -max_hsps 1 -num_threads 32 -outfmt 6 -evalue ${EVALUE} -max_target_seqs 99999999 -out ${OUTDIR}/${BLAST_OUT_FILE_NAME}
 
 ###################
 # create sim file #
