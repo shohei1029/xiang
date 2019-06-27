@@ -1,2 +1,3 @@
 # xiang
-useful scripts for me
+Useful scripts for me
+Mostly Zsh scripts
