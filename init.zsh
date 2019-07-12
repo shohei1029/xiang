@@ -1,3 +1,3 @@
-#fpath+=("${${(%):-%N}:A:h}/functions") #Don't work in lab servers.
+fpath+=("${${(%):-%N}:A:h}/functions") #Don't work in lab servers.
 
-fpath+="`echo ./(:A)`/functions"
+#fpath+="`echo ./(:A)`/functions"
