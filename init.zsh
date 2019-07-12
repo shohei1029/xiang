@@ -1,3 +1,3 @@
-#!/usr/bin/env zsh
+#fpath+=("${${(%):-%N}:A:h}/functions") #Don't work in lab servers.
 
-fpath+=("${${(%):-%N}:A:h}/functions")
+fpath+="`echo ./(:A)`/functions"
